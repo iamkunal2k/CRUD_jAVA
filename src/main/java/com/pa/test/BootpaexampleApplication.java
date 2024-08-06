@@ -40,13 +40,13 @@ public class BootpaexampleApplication {
 //		user2.setName("Arush");
 //		user2.setCity("Nagpur");
 //		user2.setStatus("C++ Programmer");
-//
-//		// saving single user
-//		// User resultuser = userRepository.save(user2);
-//
+
+////		// saving single user
+////		// User resultuser = userRepository.save(user2);
+////
 //		List<User> users = List.of(user1, user2);
-//
-//		//save multiple
+
+		//save multiple
 //		Iterable<User> result = userRepository.saveAll(users);
 //
 //		result.forEach((user -> {
@@ -93,11 +93,15 @@ public class BootpaexampleApplication {
 
 		//Deleting the user
 //		userRepository.deleteById(53);
-//		System.out.println("Deleted : ");
+////		System.out.println("Deleted : ");
+//
+//		Iterable<User> allusers = userRepository.findAll();
+//		allusers.forEach(user -> System.out.println(user));
+//		userRepository.deleteAll(allusers);
 
-		Iterable<User> allusers = userRepository.findAll();
-		allusers.forEach(user -> System.out.println(user));
-		userRepository.deleteAll(allusers);
+		List<User> users = userRepository.findByName("Arush");
+		users.forEach(user -> System.out.println(user));
+
 	}
 
 
